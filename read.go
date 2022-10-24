@@ -2,7 +2,7 @@ package test
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"strings"
 )
@@ -14,7 +14,7 @@ func Read(file string) string {
 		return ""
 	}
 	defer content.Close()
-	byteValue, err := ioutil.ReadAll(content)
+	byteValue, err := io.ReadAll(content)
 	if err != nil {
 		return ""
 	}
