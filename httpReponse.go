@@ -2,7 +2,7 @@ package test
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -14,7 +14,7 @@ func HTTPResponse200(body string, req *http.Request) *http.Response {
 		Proto:         "HTTP/1.1",
 		ProtoMajor:    1,
 		ProtoMinor:    1,
-		Body:          ioutil.NopCloser(bytes.NewReader([]byte(body))),
+		Body:          io.NopCloser(bytes.NewReader([]byte(body))),
 		ContentLength: int64(len(body)),
 		Request:       req,
 		Header:        make(http.Header),
@@ -29,7 +29,7 @@ func HTTPResponse201(body string, req *http.Request) *http.Response {
 		Proto:         "HTTP/1.1",
 		ProtoMajor:    1,
 		ProtoMinor:    1,
-		Body:          ioutil.NopCloser(bytes.NewReader([]byte(body))),
+		Body:          io.NopCloser(bytes.NewReader([]byte(body))),
 		ContentLength: int64(len(body)),
 		Request:       req,
 		Header:        make(http.Header),
@@ -44,7 +44,7 @@ func HTTPResponse400(body string, req *http.Request) *http.Response {
 		Proto:         "HTTP/1.1",
 		ProtoMajor:    1,
 		ProtoMinor:    1,
-		Body:          ioutil.NopCloser(bytes.NewReader([]byte(body))),
+		Body:          io.NopCloser(bytes.NewReader([]byte(body))),
 		ContentLength: int64(len(body)),
 		Request:       req,
 		Header:        make(http.Header),
@@ -59,7 +59,7 @@ func HTTPResponse402(body string, req *http.Request) *http.Response {
 		Proto:         "HTTP/1.1",
 		ProtoMajor:    1,
 		ProtoMinor:    1,
-		Body:          ioutil.NopCloser(bytes.NewReader([]byte(body))),
+		Body:          io.NopCloser(bytes.NewReader([]byte(body))),
 		ContentLength: int64(len(body)),
 		Request:       req,
 		Header:        make(http.Header),
@@ -74,7 +74,7 @@ func HTTPResponse403(body string, req *http.Request) *http.Response {
 		Proto:         "HTTP/1.1",
 		ProtoMajor:    1,
 		ProtoMinor:    1,
-		Body:          ioutil.NopCloser(bytes.NewReader([]byte(body))),
+		Body:          io.NopCloser(bytes.NewReader([]byte(body))),
 		ContentLength: int64(len(body)),
 		Request:       req,
 		Header:        make(http.Header),
@@ -89,7 +89,7 @@ func HTTPResponse422(body string, req *http.Request) *http.Response {
 		Proto:         "HTTP/1.1",
 		ProtoMajor:    1,
 		ProtoMinor:    1,
-		Body:          ioutil.NopCloser(bytes.NewReader([]byte(body))),
+		Body:          io.NopCloser(bytes.NewReader([]byte(body))),
 		ContentLength: int64(len(body)),
 		Request:       req,
 		Header:        make(http.Header),
@@ -104,7 +104,7 @@ func HTTPResponse500(body string, req *http.Request) *http.Response {
 		Proto:         "HTTP/1.1",
 		ProtoMajor:    1,
 		ProtoMinor:    1,
-		Body:          ioutil.NopCloser(bytes.NewReader([]byte(body))),
+		Body:          io.NopCloser(bytes.NewReader([]byte(body))),
 		ContentLength: int64(len(body)),
 		Request:       req,
 		Header:        make(http.Header),
